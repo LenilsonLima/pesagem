@@ -1,0 +1,179 @@
+.container_header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background: linear-gradient(90deg, rgba(255, 176, 9, .7) 0%, rgba(255, 176, 9, .7) 35%), url('https://img.freepik.com/vetores-gratis/padrao-de-malha-de-favo-de-mel-hexagonal-amarelo-com-espaco-de-texto_1017-26292.jpg?t=st=1743834512~exp=1743838112~hmac=abc758322b86e7d8e4add41e293b59d90b65d99c65bf56a96e01971e035643f8&w=1380');
+    background-repeat: no-repeat;
+    background-size: cover;
+    align-items: center;
+    column-gap: 100px;
+    height: 100px;
+
+    .btns_menu {
+        display: flex;
+        flex-grow: 1;
+        justify-content: flex-end;
+        align-items: center;
+        column-gap: 20px;
+
+        svg {
+            font-size: 30px;
+            cursor: pointer;
+        }
+
+        .input_pesquisar {
+            background-color: #fff;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            flex-grow: 1;
+            max-width: 800px;
+            border-radius: 3px;
+            overflow: hidden;
+            padding: 10px;
+
+            input {
+                width: 100%;
+                padding: 5px 10px;
+                border: none;
+                outline: none;
+            }
+
+            svg {
+                color: gray;
+                font-size: 25px;
+            }
+        }
+    }
+
+    .menu {
+        position: fixed;
+        background: linear-gradient(0deg, rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, .5) 41%);
+        width: 100%;
+        height: 100vh;
+        left: 0px;
+        top: 0px;
+        z-index: 99;
+
+        ul {
+            padding: 10px;
+            background-color: #fff;
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            display: flex;
+            flex-direction: column;
+            min-width: 250px;
+            background: linear-gradient(90deg, rgba(255, 176, 9, .7) 0%, rgba(255, 176, 9, .7) 35%), url('https://img.freepik.com/vetores-gratis/padrao-de-malha-de-favo-de-mel-hexagonal-amarelo-com-espaco-de-texto_1017-26292.jpg?t=st=1743834512~exp=1743838112~hmac=abc758322b86e7d8e4add41e293b59d90b65d99c65bf56a96e01971e035643f8&w=1380');
+            background-size: cover;
+            background-repeat: no-repeat;
+            border-radius: 3px;
+
+            .close_menu {
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+                margin-bottom: 10px;
+
+                svg {
+                    font-size: 30px;
+                    cursor: pointer;
+                }
+            }
+
+            button {
+                padding: 15px;
+                text-align: left;
+                border: 0px;
+                font-size: 15px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                background-color: #dbc43f;
+                cursor: pointer;
+                // border-radius: 3px;
+                font-size: 20px;
+                border: solid 1px rgb(255, 165, 0);
+
+                svg {
+                    font-size: 20px;
+                }
+            }
+        }
+
+        .fundo {
+            background-color: transparent;
+            width: 100%;
+            height: 100vh;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
+
+            span {
+                font-size: 30px;
+                font-weight: bold;
+                color: #fff;
+                text-align: center;
+            }
+        }
+    }
+
+    .info_user,
+    .info_user_menu {
+        display: flex;
+        align-items: center;
+        column-gap: 5px;
+
+        button {
+            min-height: 60px;
+            min-width: 60px;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(255, 165, 0);
+            position: relative;
+
+            .icone_user {
+                font-size: 35px;
+            }
+
+            .icone_editar {
+                position: absolute;
+                bottom: 6px;
+                right: 5px;
+                font-size: 15px;
+            }
+        }
+
+        span {
+            font-size: 20px;
+            text-transform: capitalize;
+            font-weight: bold;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 200px;
+            @media (max-width: 550px) {
+                max-width: 80px;
+            }
+        }
+    }
+
+    @media (max-width: 750px) {
+        .info_user_menu {
+            display: none;
+        }
+
+        .btns_menu {
+
+            .input_pesquisar {
+                max-width: none;
+            }
+        }
+    }
+}

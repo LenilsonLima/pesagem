@@ -1,0 +1,141 @@
+.view_caixas {
+    background: linear-gradient(90deg, rgba(90, 71, 53, .5) 0%, rgba(90, 71, 53, .5) 35%), url('https://img.elo7.com.br/product/zoom/2F0445C/fundo-fotografico-em-tecido-madeira-2-20x1-50-bebe.jpg?_gl=1*16vj8j6*_gcl_au*MTcwNjA2MzM3MC4xNzQzODM1MDAx*_ga*MTIwMTY2MDQ0OS4xNzQzODM1MDAx*_ga_22YVRK2WCW*MTc0MzgzNTAwMC4xLjEuMTc0MzgzNTA0Ny4xMy4wLjk1OTc5Nzg5OQ..');
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+    .container_listar_caixas {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 20px;
+        justify-content: center;
+        align-items: center;
+        row-gap: 20px;
+        flex-grow: 1;
+
+        .area_card_caixa {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            row-gap: 20px;
+            column-gap: 20px;
+            justify-content: center;
+            align-items: center;
+
+            .card_caixa {
+                background-color: yellow;
+                flex-grow: 1;
+                min-width: 300px;
+                max-width: 350px;
+                min-height: 300px;
+                flex-basis: 0;
+                height: auto;
+                display: flex;
+                flex-direction: column;
+                padding: 20px;
+                border-radius: 5px;
+                justify-content: center;
+                align-items: center;
+                row-gap: 20px;
+                background: linear-gradient(90deg, rgba(255, 176, 9, .7) 0%, rgba(255, 176, 9, .7) 35%), url('https://img.freepik.com/vetores-gratis/padrao-de-malha-de-favo-de-mel-hexagonal-amarelo-com-espaco-de-texto_1017-26292.jpg?t=st=1743834512~exp=1743838112~hmac=abc758322b86e7d8e4add41e293b59d90b65d99c65bf56a96e01971e035643f8&w=1380');
+                background-size: cover;
+                background-repeat: no-repeat;
+                cursor: pointer;
+                transition: .5s ease-in-out;
+                position: relative;
+                overflow: hidden;
+
+                .card_click {
+                    background-color: transparent;
+                    position: absolute;
+                    top: 0px;
+                    left: 0px;
+                    height: 100%;
+                    width: 100%;
+                    z-index: 2;
+                }
+
+                &:hover {
+                    opacity: .7;
+                }
+
+                .identificador_balanca {
+                    font-size: 20px;
+                    font-weight: bold;
+                    text-align: center;
+                }
+
+                .criado_em {
+                    font-size: 15px;
+                    text-align: center;
+                }
+
+                .observacao {
+                    font-size: 13px;
+                    text-align: center;
+                }
+
+                .btns_card {
+                    display: flex;
+                    width: 100%;
+                    column-gap: 10px;
+                    row-gap: 10px;
+                    flex-wrap: wrap;
+                    z-index: 3;
+
+                    button {
+                        flex-grow: 1;
+                        padding: 10px;
+                        border: none;
+                        border-radius: 5px;
+                        cursor: pointer;
+                        background-color: red;
+                        font-weight: bold;
+                        font-size: 15px;
+                    }
+
+                    .alterar {
+                        background-color: rgb(255, 165, 0);
+                    }
+                }
+
+                @media (max-width: 670px) {
+                    max-width: none;
+                }
+            }
+        }
+    }
+
+    .img_sem_registros {
+        height: 100%;
+        max-height: 250px;
+        object-fit: cover;
+    }
+
+    .btn_add_caixa {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: none;
+        background-color: rgb(255, 165, 0);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        transition: .5s ease-in-out;
+
+        svg {
+            font-size: 25px;
+            color: #ffffff;
+        }
+
+        &:hover {
+            opacity: .8;
+        }
+    }
+}

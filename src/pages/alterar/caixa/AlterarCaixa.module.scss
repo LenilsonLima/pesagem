@@ -1,0 +1,77 @@
+.container_alterar_caixa {
+    background: linear-gradient(90deg, rgba(90, 71, 53, .5) 0%, rgba(90, 71, 53, .5) 35%), url('https://img.elo7.com.br/product/zoom/2F0445C/fundo-fotografico-em-tecido-madeira-2-20x1-50-bebe.jpg?_gl=1*16vj8j6*_gcl_au*MTcwNjA2MzM3MC4xNzQzODM1MDAx*_ga*MTIwMTY2MDQ0OS4xNzQzODM1MDAx*_ga_22YVRK2WCW*MTc0MzgzNTAwMC4xLjEuMTc0MzgzNTA0Ny4xMy4wLjk1OTc5Nzg5OQ..');
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+
+    form {
+        background-color: #fff;
+        width: 100%;
+        max-width: 600px;
+        display: flex;
+        flex-direction: column;
+        padding: 40px;
+        row-gap: 20px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background: linear-gradient(90deg, rgba(255, 176, 9, .8) 0%, rgba(255, 176, 9, .8) 35%), url('https://img.freepik.com/vetores-gratis/padrao-de-malha-de-favo-de-mel-hexagonal-amarelo-com-espaco-de-texto_1017-26292.jpg?t=st=1743834512~exp=1743838112~hmac=abc758322b86e7d8e4add41e293b59d90b65d99c65bf56a96e01971e035643f8&w=1380');
+
+        h1 {}
+
+        label {
+            display: flex;
+            flex-direction: column;
+            row-gap: 5px;
+
+            span {
+                font-size: 20px;
+            }
+
+            input {
+                padding: 20px;
+                border: none;
+                outline: none;
+                background-color: #eaf1f7;
+                font-size: 20px;
+            }
+        }
+
+        button {
+            border: none;
+            padding: 20px;
+            cursor: pointer;
+            font-size: 20px;
+            background: linear-gradient(90deg, rgba(219, 196, 63, 1) 0%, rgba(219, 196, 63, 1) 35%);
+            transition: ease-in-out .5s;
+
+            &:hover {
+                background: linear-gradient(90deg, rgba(219, 196, 63, .8) 0%, rgba(219, 196, 63, .8) 35%);
+            }
+        }
+
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            font-size: 20px;
+            align-items: center;
+
+            a {
+                text-decoration: none;
+                color: red;
+                cursor: pointer;
+            }
+        }
+    }
+
+    @media (max-width: 550px) {
+        form {
+            padding: 40px 20px;
+            min-height: 60vh;
+        }
+    }
+}

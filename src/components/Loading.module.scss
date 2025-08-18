@@ -1,0 +1,28 @@
+.container_loading {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background: linear-gradient(90deg, rgba(90, 71, 53, .5) 0%, rgba(90, 71, 53, .5) 35%), url('https://img.elo7.com.br/product/zoom/2F0445C/fundo-fotografico-em-tecido-madeira-2-20x1-50-bebe.jpg?_gl=1*16vj8j6*_gcl_au*MTcwNjA2MzM3MC4xNzQzODM1MDAx*_ga*MTIwMTY2MDQ0OS4xNzQzODM1MDAx*_ga_22YVRK2WCW*MTc0MzgzNTAwMC4xLjEuMTc0MzgzNTA0Ny4xMy4wLjk1OTc5Nzg5OQ..');
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    .loading {
+        width: 60px;
+        height: 60px;
+        border: solid 8px red;
+        border-radius: 50%;
+        border-left-color: transparent;
+        animation-name: loading;
+        animation-duration: .5s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+    }
+
+    @keyframes loading {
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+}
