@@ -13,10 +13,11 @@ import { Line } from 'react-chartjs-2';
 import Header from '../../../components/Header';
 import styles from './RelatorioCaixas.module.scss';
 import axios from 'axios';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { AlertErro } from '../../../components/Alertas';
 import Loading from '../../../components/Loading';
 import { Apis } from '../../../Apis';
+import PesosPdf from './PesosPdf';
 ChartJS.register(
     CategoryScale,
     LinearScale,
@@ -44,6 +45,7 @@ const RelatorioCaixas = () => {
     const [loading, setLoading] = useState(true);
     const [pesos, setPesos] = useState([]);
     const date = new Date();
+    const navigation = useNavigate();
     const data_atual = String(date.getFullYear() + '-' + String(date.getMonth() + 1).padStart(2, 0) + '-' + String(date.getDate()).padStart(2, 0));
     const [dataIncial, setDataIncial] = useState(data_atual);
     const [dataFinal, setDataFinal] = useState(data_atual);
@@ -64,6 +66,8 @@ const RelatorioCaixas = () => {
 
             const response = await axios.get(`${Apis.urlPesoCaixa}/${params?.caixa_id}/${dataIncial}/${dataFinal}`, requestOptions);
             setPesos(response.data.registros);
+            console.log(response.data.registros);
+
         } catch (error) {
             AlertErro(error.response.data.retorno.mensagem);
             console.log(error.response.data);
@@ -106,6 +110,7 @@ const RelatorioCaixas = () => {
                         <input type='date' defaultValue={dataFinal} onChange={(e) => setDataFinal(e.target.value)} />
                     </label>
                     <button onClick={handlePeso}>aplicar filtro</button>
+                    <button onClick={() => navigation(`/caixa/relatorio/pdf/${params.caixa_id}/${dataIncial}/${dataFinal}`)}>exportar pdf</button>
                 </div>
                 {pesos?.length > 0 &&
                     <Line options={options} data={data} className={styles.grafico} />

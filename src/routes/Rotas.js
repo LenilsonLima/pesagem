@@ -8,6 +8,7 @@ import AlterarCaixa from "../pages/alterar/caixa/AlterarCaixa";
 import RelatorioCaixas from "../pages/listagem/relatorios/RelatorioCaixas";
 import AlterarSenha from "../pages/alterar/senha/AlterarSenha";
 import SolicitarEmailSenha from "../pages/alterar/solicitarEmailSenha/SolicitarEmailSenha";
+import PesosPdf from "../pages/listagem/relatorios/PesosPdf";
 
 // Componente para rotas privadas
 const PrivateRoute = ({ children }) => {
@@ -43,6 +44,11 @@ const Rotas = () => {
             <Route path="/caixa/relatorio/:caixa_id" element={
                 <PrivateRoute>
                     <RelatorioCaixas />
+                </PrivateRoute>
+            } />
+            <Route path="/caixa/relatorio/pdf/:caixa_id/:data_inicial/:data_final" element={
+                <PrivateRoute>
+                    <PesosPdf />
                 </PrivateRoute>
             } />
             <Route path="/apicultor/alterar" element={
