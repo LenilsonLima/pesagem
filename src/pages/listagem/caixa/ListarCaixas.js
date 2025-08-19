@@ -27,16 +27,15 @@ const ListarCaixas = () => {
                 headers: {
                     'Content-Type': 'application/json', 'Authorization': `Bearer ${localStorage.getItem('@pesagem_token')}`
                 },
-            }
-
-            const params = {
-                obs_identificador: pesquisar,
-                status_caixa_peso: statusCaixaFiltro
+                params: {
+                    obs_identificador: pesquisar,
+                    status_caixa_peso: statusCaixaFiltro
+                }
             };
 
             setLoading(true);
 
-            const response = await axios.get(`${Apis.urlCaixa}/filtro`, { ...requestOptions, params: params });
+            const response = await axios.get(`${Apis.urlCaixa}/filtro`, requestOptions);
 
             setCaixas(response.data.registros);
         } catch (error) {
