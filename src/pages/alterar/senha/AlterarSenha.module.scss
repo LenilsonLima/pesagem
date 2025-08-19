@@ -1,5 +1,5 @@
 .container_login {
-    background: linear-gradient(90deg, rgba(90, 71, 53, .5) 0%, rgba(90, 71, 53, .5) 35%), url('https://img.elo7.com.br/product/zoom/2F0445C/fundo-fotografico-em-tecido-madeira-2-20x1-50-bebe.jpg?_gl=1*16vj8j6*_gcl_au*MTcwNjA2MzM3MC4xNzQzODM1MDAx*_ga*MTIwMTY2MDQ0OS4xNzQzODM1MDAx*_ga_22YVRK2WCW*MTc0MzgzNTAwMC4xLjEuMTc0MzgzNTA0Ny4xMy4wLjk1OTc5Nzg5OQ..');
+    background: linear-gradient(90deg, rgba(90, 71, 53, .5) 0%, rgba(90, 71, 53, .5) 35%), url('../../../assets/fundo_madeira.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     min-height: 100vh;
@@ -19,7 +19,7 @@
         row-gap: 20px;
         background-size: cover;
         background-repeat: no-repeat;
-        background: linear-gradient(90deg, rgba(255, 176, 9, .8) 0%, rgba(255, 176, 9, .8) 35%), url('https://img.freepik.com/vetores-gratis/padrao-de-malha-de-favo-de-mel-hexagonal-amarelo-com-espaco-de-texto_1017-26292.jpg?t=st=1743834512~exp=1743838112~hmac=abc758322b86e7d8e4add41e293b59d90b65d99c65bf56a96e01971e035643f8&w=1380');
+        background: linear-gradient(90deg, rgba(255, 176, 9, .8) 0%, rgba(255, 176, 9, .8) 35%), url('../../../assets/fundo_colmeia.avif');
 
         h1 {}
 
