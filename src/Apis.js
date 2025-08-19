@@ -1,5 +1,5 @@
-// const BASE_URL = 'https://api-pesagem-chi.vercel.app/'
-const BASE_URL = 'http://localhost:5000/'
+const BASE_URL = 'https://api-pesagem-chi.vercel.app/'
+// const BASE_URL = 'http://localhost:5000/'
 export const Apis = {
     urlApicultor: BASE_URL + 'apicultor',
     urlCaixa: BASE_URL + 'caixa',
