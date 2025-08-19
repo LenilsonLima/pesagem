@@ -11,28 +11,33 @@ import img_sem_registros from '../../../assets/fundo.png';
 
 const ListarCaixas = () => {
     const [caixas, setCaixas] = useState([]);
+    const [filtrar, setFiltrar] = useState(false);
     const [pesquisar, setPesquisar] = useState('');
+    const [statusCaixaFiltro, setStatusCaixaFiltro] = useState(0);
     const [loading, setLoading] = useState(true);
     const navigation = useNavigate();
 
     useEffect(() => {
-        const delayDebounce = setTimeout(() => {
-            handleCaixas();
-        }, 1000);
-
-        return () => clearTimeout(delayDebounce);
-    }, [pesquisar]);
+        handleCaixas();
+    }, [filtrar]);
 
     const handleCaixas = async () => {
         try {
             const requestOptions = {
                 headers: {
                     'Content-Type': 'application/json', 'Authorization': `Bearer ${localStorage.getItem('@pesagem_token')}`
-                }
+                },
             }
+
+            const params = {
+                obs_identificador: pesquisar,
+                status_caixa_peso: statusCaixaFiltro
+            };
+
             setLoading(true);
 
-            const response = await axios.get(`${Apis.urlCaixa}/filtro?obs_identificador=${pesquisar}`, requestOptions);
+            // const response = await axios.get(`${Apis.urlCaixa}/filtro?obs_identificador=${pesquisar}`, requestOptions);
+            const response = await axios.get(`http://localhost:5000/caixa/filtro`, { ...requestOptions, params: params });
 
             setCaixas(response.data.registros);
         } catch (error) {
@@ -66,19 +71,23 @@ const ListarCaixas = () => {
     }
     return (
         <div className={styles.view_caixas}>
-            <Header setPesquisar={setPesquisar} pesquisar={pesquisar} setLoading={setLoading} />
+            <Header setLoading={setLoading} />
             <div className={styles.container_filtro}>
                 <label className={styles.label_filtro}>
-                    <input type='text' placeholder='Informe o ID ou a observação para pesquisar...' />
+                    <input
+                        value={pesquisar} onChange={(e) => setPesquisar(e.target.value)}
+                        type='text'
+                        placeholder='Informe o ID ou a observação para pesquisar...'
+                    />
                 </label>
                 <label className={styles.label_filtro}>
-                    <select>
-                        <option>- mostrar todos -</option>
-                        <option>Prontos para coleta</option>
-                        <option>Abaixo do peso de coleta</option>
+                    <select value={statusCaixaFiltro} onChange={(e) => setStatusCaixaFiltro(e.target.value)}>
+                        <option value={0}>- mostrar todos -</option>
+                        <option value={1}>Prontos para coleta</option>
+                        <option value={2}>Abaixo do peso de coleta</option>
                     </select>
                 </label>
-                <button>Aplicar filtro</button>
+                <button onClick={() => setFiltrar(prevent => !prevent)}>Aplicar filtro</button>
             </div>
             <div className={styles.container_listar_caixas}>
                 {

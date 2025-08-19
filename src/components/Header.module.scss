@@ -58,8 +58,7 @@
         }
     }
 
-    .info_user,
-    .info_user_menu {
+    .info_user {
         display: flex;
         align-items: center;
         column-gap: 5px;
@@ -104,10 +103,6 @@
     }
 
     @media (max-width: 750px) {
-        .info_user_menu {
-            display: none;
-        }
-
         .btns_menu {
 
             .input_pesquisar {
