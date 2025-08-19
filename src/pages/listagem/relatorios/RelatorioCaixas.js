@@ -50,13 +50,16 @@ const RelatorioCaixas = () => {
             const requestOptions = {
                 headers: {
                     'Content-Type': 'application/json', 'Authorization': `Bearer ${localStorage.getItem('@pesagem_token')}`
+                },
+                params: {
+                    caixa_id: params?.caixa_id,
+                    data_inicial: dataIncial,
+                    data_final: dataFinal
                 }
             }
 
-            const response = await axios.get(`${Apis.urlPesoCaixa}/${params?.caixa_id}/${dataIncial}/${dataFinal}`, requestOptions);
+            const response = await axios.get(Apis.urlPesoCaixa, requestOptions);
             setPesos(response.data.registros);
-            console.log(response.data.registros);
-
         } catch (error) {
             AlertErro(error.response.data.retorno.mensagem);
             console.log(error.response.data);

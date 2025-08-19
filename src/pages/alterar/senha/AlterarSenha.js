@@ -17,7 +17,15 @@ const AlterarSenha = () => {
     const handleVerificaTokenSenha = async () => {
         try {
             setLoading(true);
-            await axios.get(`${Apis.urlApicultor}/senha/${params?.token_senha}`);
+            const requestOptions = {
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                params: {
+                    token_senha: params?.token_senha
+                }
+            }
+            await axios.get(`${Apis.urlApicultor}/token_senha`, requestOptions);
         } catch (error) {
             AlertErro(error.response?.data.retorno.mensagem);
             localStorage.clear();
@@ -46,7 +54,7 @@ const AlterarSenha = () => {
                 }
             }
 
-            const response = await axios.put(`${Apis.urlApicultor}/senha/alterar`, formValues, requestoptions);
+            const response = await axios.put(`${Apis.urlApicultor}/senha`, formValues, requestoptions);
             navigation('/', { replace: true });
             AlertSucess(response?.data.retorno.mensagem);
         } catch (error) {

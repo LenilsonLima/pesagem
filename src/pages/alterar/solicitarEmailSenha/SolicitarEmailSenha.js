@@ -27,7 +27,7 @@ const SolicitarEmailSenha = () => {
                 }
             }
 
-            const response = await axios.post(`${Apis.urlApicultor}/senha`, formValues, requestoptions);
+            const response = await axios.post(`${Apis.urlApicultor}/token_senha`, formValues, requestoptions);
             AlertSucess(response?.data.retorno.mensagem);
             navigation('/', { replace: true });
         } catch (error) {

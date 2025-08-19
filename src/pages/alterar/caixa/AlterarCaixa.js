@@ -21,10 +21,13 @@ const AlterarCaixa = () => {
             const requestOptions = {
                 headers: {
                     'Content-Type': 'application/json', 'Authorization': `Bearer ${localStorage.getItem('@pesagem_token')}`
+                },
+                params: {
+                    caixa_id: params.caixa_id
                 }
             }
 
-            const response = await axios.get(`${Apis.urlCaixa}/${params.caixa_id}`, requestOptions);
+            const response = await axios.get(`${Apis.urlCaixa}/read_one_id`, requestOptions);
             setCaixa(response.data.registros[0]);
         } catch (error) {
             alert(error.response.data.retorno.mensagem);
@@ -36,6 +39,7 @@ const AlterarCaixa = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         const formData = new FormData(e.target);
+        formData.append('caixa_id', params.caixa_id);
         const formValues = Object.fromEntries(formData);
 
         if (!formValues.identificador_balanca || !formValues.observacao) {
@@ -51,7 +55,7 @@ const AlterarCaixa = () => {
                 }
             }
 
-            const response = await axios.put(`${Apis.urlCaixa}/${params.caixa_id}`, formValues, requestoptions);
+            const response = await axios.put(Apis.urlCaixa, formValues, requestoptions);
             AlertSucess(response?.data.retorno.mensagem);
             navigation(-1)
 

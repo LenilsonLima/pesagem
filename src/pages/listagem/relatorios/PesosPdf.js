@@ -82,16 +82,18 @@ export default function RelatorioPesagemPDF() {
             try {
                 const token = localStorage.getItem('@pesagem_token');
                 if (!token) throw new Error('Token de autenticação não encontrado');
-
-                const response = await axios.get(
-                    `${Apis.urlPesoCaixa}/${caixa_id}/${data_inicial}/${data_final}`,
-                    {
-                        headers: {
-                            'Authorization': `Bearer ${token}`,
-                            'Content-Type': 'application/json'
-                        }
+                const requestOptions = {
+                    headers: {
+                        'Authorization': `Bearer ${token}`,
+                        'Content-Type': 'application/json'
+                    },
+                    params: {
+                        caixa_id: caixa_id,
+                        data_inicial: data_inicial,
+                        data_final: data_final
                     }
-                );
+                }
+                const response = await axios.get(Apis.urlPesoCaixa, requestOptions);
 
                 if (!response.data?.registros) {
                     throw new Error('Estrutura de dados inválida na resposta');
@@ -112,7 +114,7 @@ export default function RelatorioPesagemPDF() {
 
     if (loading) {
         return (
-            <Loading/>
+            <Loading />
         );
     }
 

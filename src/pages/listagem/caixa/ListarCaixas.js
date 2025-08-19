@@ -53,10 +53,13 @@ const ListarCaixas = () => {
             const requestOptions = {
                 headers: {
                     'Content-Type': 'application/json', 'Authorization': `Bearer ${localStorage.getItem('@pesagem_token')}`
+                },
+                params: {
+                    caixa_id: caixa_id
                 }
             }
             setLoading(true);
-            const response = await axios.delete(`${Apis.urlCaixa}/${caixa_id}`, requestOptions);
+            const response = await axios.delete(Apis.urlCaixa, requestOptions);
             AlertSucess(response.data.retorno.mensagem);
             handleCaixas();
         } catch (error) {
