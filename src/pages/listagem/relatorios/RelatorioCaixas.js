@@ -28,27 +28,16 @@ ChartJS.register(
     Legend
 );
 
-export const options = {
-    responsive: true,
-    plugins: {
-        legend: {
-            position: 'top',
-        },
-        title: {
-            display: true,
-            text: 'Relatório de Pesos Dos Ultimos 7 Dias',
-        },
-    },
-};
 
 const RelatorioCaixas = () => {
     const [loading, setLoading] = useState(true);
     const [pesos, setPesos] = useState([]);
     const date = new Date();
     const navigation = useNavigate();
-    const data_atual = String(date.getFullYear() + '-' + String(date.getMonth() + 1).padStart(2, 0) + '-' + String(date.getDate()).padStart(2, 0));
-    const [dataIncial, setDataIncial] = useState(data_atual);
-    const [dataFinal, setDataFinal] = useState(data_atual);
+    const data_inicial = String(date.getFullYear() + '-' + String(date.getMonth() + 1).padStart(2, 0) + '-01');
+    const data_final = String(date.getFullYear() + '-' + String(date.getMonth() + 1).padStart(2, 0) + '-' + String(date.getDate()).padStart(2, 0));
+    const [dataIncial, setDataIncial] = useState(data_inicial);
+    const [dataFinal, setDataFinal] = useState(data_final);
     const params = useParams();
 
     useEffect(() => {
@@ -76,6 +65,19 @@ const RelatorioCaixas = () => {
             setLoading(false);
         }
     }
+
+    const options = {
+        responsive: true,
+        plugins: {
+            legend: {
+                position: 'top',
+            },
+            title: {
+                display: true,
+                text: `Relatório de Pesos | ${String(dataIncial).split('-').reverse().join('/')} à ${String(dataFinal).split('-').reverse().join('/')}`,
+            },
+        },
+    };
 
     // Gerando as labels (por exemplo, "1", "2", ..., "22")
     const labels = pesos.map((_, index) => (index + 1).toString());
