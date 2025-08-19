@@ -67,6 +67,19 @@ const ListarCaixas = () => {
     return (
         <div className={styles.view_caixas}>
             <Header setPesquisar={setPesquisar} pesquisar={pesquisar} setLoading={setLoading} />
+            <div className={styles.container_filtro}>
+                <label className={styles.label_filtro}>
+                    <input type='text' placeholder='Informe o ID ou a observação para pesquisar...' />
+                </label>
+                <label className={styles.label_filtro}>
+                    <select>
+                        <option>- mostrar todos -</option>
+                        <option>Prontos para coleta</option>
+                        <option>Abaixo do peso de coleta</option>
+                    </select>
+                </label>
+                <button>Aplicar filtro</button>
+            </div>
             <div className={styles.container_listar_caixas}>
                 {
                     caixas?.length > 0 ?

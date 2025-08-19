@@ -101,18 +101,16 @@ const RelatorioCaixas = () => {
         <div className={styles.view_relatorio}>
             <Header />
             <div className={styles.container_relatorio_caixas}>
-                <div>
-                    <label>
-                        <span>Data inicial</span>
+                <div className={styles.container_filtro}>
+                    <label className={styles.label_friltro}>
                         <input type='date' defaultValue={dataIncial} onChange={(e) => setDataIncial(e.target.value)} />
                     </label>
 
-                    <label>
-                        <span>Data Final</span>
+                    <label className={styles.label_friltro}>
                         <input type='date' defaultValue={dataFinal} onChange={(e) => setDataFinal(e.target.value)} />
                     </label>
-                    <button onClick={handlePeso}>aplicar filtro</button>
-                    <button onClick={() => navigation(`/caixa/relatorio/pdf/${params.caixa_id}/${dataIncial}/${dataFinal}`)}>exportar pdf</button>
+                    <button onClick={handlePeso}>Aplicar Filtro</button>
+                    <button onClick={() => navigation(`/caixa/relatorio/pdf/${params.caixa_id}/${dataIncial}/${dataFinal}`)}>PDF</button>
                 </div>
                 {pesos?.length > 0 &&
                     <Line options={options} data={data} className={styles.grafico} />

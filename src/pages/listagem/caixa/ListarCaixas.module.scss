@@ -1,17 +1,58 @@
 .view_caixas {
-    background: linear-gradient(90deg, rgba(90, 71, 53, .5) 0%, rgba(90, 71, 53, .5) 35%), url('../../../assets/fundo_madeira.jpg');
+    background: linear-gradient(90deg, rgba(90, 71, 53, .7) 0%, rgba(90, 71, 53, .7) 35%), url('../../../assets/fundo_madeira.jpg');
     background-repeat: no-repeat;
     background-size: cover;
+    background-attachment: fixed;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+
+    .container_filtro {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 5px;
+        width: 100%;
+        flex-wrap: wrap;
+        padding: 20px 20px 0px 20px;
+
+        .label_filtro {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            max-width: 400px;
+
+            input,
+            select {
+                padding: 10px;
+                font-size: 12px;
+                height: 40px;
+                border: none;
+                outline: none;
+                border-radius: 5px;
+            }
+
+            &:nth-child(2) {
+                max-width: 190px;
+            }
+        }
+
+        button {
+            padding: 5px 15px;
+            cursor: pointer;
+            border: none;
+            height: 40px;
+            min-width: 70px;
+            border-radius: 5px;
+        }
+    }
 
     .container_listar_caixas {
         display: flex;
         flex-wrap: wrap;
         padding: 20px;
-        justify-content: center;
-        align-items: center;
+        justify-content: flex-start;
+        align-items: flex-start;
         row-gap: 20px;
         flex-grow: 1;
 
@@ -21,7 +62,7 @@
             flex-wrap: wrap;
             row-gap: 20px;
             column-gap: 20px;
-            justify-content: center;
+            // justify-content: center;
             align-items: center;
 
             .card_caixa {

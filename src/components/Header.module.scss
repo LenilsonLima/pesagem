@@ -5,6 +5,7 @@
     background: linear-gradient(90deg, rgba(255, 176, 9, .5) 0%, rgba(255, 176, 9, .5) 35%), url('../assets/fundo_colmeia.png');
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: top;
     align-items: center;
     column-gap: 100px;
     height: 100px;
@@ -14,11 +15,21 @@
         flex-grow: 1;
         justify-content: flex-end;
         align-items: center;
-        column-gap: 20px;
+        column-gap: 10px;
 
-        svg {
-            font-size: 30px;
+        button {
+            border: none;
+            height: 45px;
+            width: 45px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             cursor: pointer;
+
+            svg {
+                font-size: 20px;
+            }
         }
 
         .input_pesquisar {
@@ -42,80 +53,7 @@
             svg {
                 color: gray;
                 font-size: 25px;
-            }
-        }
-    }
-
-    .menu {
-        position: fixed;
-        background: linear-gradient(0deg, rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, .5) 41%);
-        width: 100%;
-        height: 100vh;
-        left: 0px;
-        top: 0px;
-        z-index: 99;
-
-        ul {
-            padding: 10px;
-            background-color: #fff;
-            position: absolute;
-            right: 10px;
-            top: 10px;
-            display: flex;
-            flex-direction: column;
-            min-width: 250px;
-            background: linear-gradient(90deg, rgba(255, 176, 9, .5) 0%, rgba(255, 176, 9, .5) 35%), url('../assets/fundo_colmeia.png');
-            background-size: cover;
-            background-repeat: no-repeat;
-            border-radius: 3px;
-
-            .close_menu {
-                display: flex;
-                align-items: center;
-                justify-content: flex-end;
-                margin-bottom: 10px;
-
-                svg {
-                    font-size: 30px;
-                    cursor: pointer;
-                }
-            }
-
-            button {
-                padding: 15px;
-                text-align: left;
-                border: 0px;
-                font-size: 15px;
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                background-color: #dbc43f;
                 cursor: pointer;
-                // border-radius: 3px;
-                font-size: 20px;
-                border: solid 1px rgb(255, 165, 0);
-
-                svg {
-                    font-size: 20px;
-                }
-            }
-        }
-
-        .fundo {
-            background-color: transparent;
-            width: 100%;
-            height: 100vh;
-            cursor: pointer;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 30px;
-
-            span {
-                font-size: 30px;
-                font-weight: bold;
-                color: #fff;
-                text-align: center;
             }
         }
     }
@@ -158,6 +96,7 @@
             overflow: hidden;
             text-overflow: ellipsis;
             max-width: 200px;
+
             @media (max-width: 550px) {
                 max-width: 80px;
             }

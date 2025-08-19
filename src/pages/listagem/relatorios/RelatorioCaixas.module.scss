@@ -1,5 +1,5 @@
 .view_relatorio {
-    background: linear-gradient(90deg, rgba(90, 71, 53, .5) 0%, rgba(90, 71, 53, .5) 35%), url('../../../assets/fundo_madeira.jpg');
+    background: linear-gradient(90deg, rgba(90, 71, 53, .7) 0%, rgba(90, 71, 53, .7) 35%), url('../../../assets/fundo_madeira.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     min-height: 100vh;
@@ -12,6 +12,39 @@
         padding: 10px;
         justify-content: center;
         align-items: flex-start;
+        gap: 10px;
+
+        .container_filtro {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 5px;
+            width: 100%;
+            flex-wrap: wrap;
+
+            .label_friltro {
+                display: flex;
+                flex-direction: column;
+
+                input {
+                    padding: 5px;
+                    font-size: 12px;
+                    height: 40px;
+                    border: none;
+                    outline: none;
+                    border-radius: 8px;
+                }
+            }
+
+            button {
+                padding: 5px 15px;
+                cursor: pointer;
+                border: none;
+                height: 40px;
+                min-width: 70px;
+                border-radius: 8px;
+            }
+        }
 
         .grafico {
             background-color: #fff;

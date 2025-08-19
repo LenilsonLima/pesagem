@@ -5,12 +5,11 @@ import { HiOutlinePencilAlt } from "react-icons/hi";
 import { IoIosSearch } from "react-icons/io";
 import { IoCloseOutline } from "react-icons/io5";
 import { useState } from 'react';
-import { IoIosArrowForward } from "react-icons/io";
-import { CgMenuRight } from "react-icons/cg";
+import { MdLogout } from "react-icons/md";
+import { RiHome9Line } from "react-icons/ri";
 
 const Header = ({ pesquisar, setPesquisar, setLoading }) => {
     const navigation = useNavigate();
-    const [menu, setMenu] = useState(false);
     const [openClosePesquisar, setOpenClosePesquisar] = useState(pesquisar ? true : false);
     const location = useLocation();
 
@@ -40,30 +39,22 @@ const Header = ({ pesquisar, setPesquisar, setLoading }) => {
                     </div>
                     :
                     <>
-                        {location.pathname === '/home' && <IoIosSearch onClick={() => setOpenClosePesquisar(true)} />}
-                        <CgMenuRight onClick={() => setMenu(true)} />
+                        {/* {location.pathname === '/home' &&
+                            <button title='Filtrar caixas'>
+                                <IoIosSearch onClick={() => setOpenClosePesquisar(true)} />
+                            </button>
+                        } */}
+                        {location.pathname != '/home' &&
+                            <button title='Ir para a tela inicial'>
+                                <RiHome9Line onClick={() => navigation('/home')} />
+                            </button>
+                        }
+                        <button title='Sair do sistema'>
+                            <MdLogout onClick={() => handleSair()} />
+                        </button>
                     </>
                 }
             </div>
-            {menu &&
-                <div className={styles.menu}>
-                    <ul>
-                        <button onClick={() => {
-                            navigation('/home');
-                            setMenu(false);
-                        }} className={styles.btn_menu}>
-                            Home
-                            <IoIosArrowForward />
-                        </button>
-                        <button onClick={handleSair} className={styles.btn_menu} style={{ borderTop: 0 }}>
-                            Sair
-                            <IoIosArrowForward />
-                        </button>
-                    </ul>
-                    <div onClick={() => setMenu(false)} className={styles.fundo} >
-                        <span>Clique Para Fechar</span>
-                    </div>
-                </div>}
         </div>
     )
 }
