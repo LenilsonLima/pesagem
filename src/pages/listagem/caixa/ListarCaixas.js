@@ -36,8 +36,7 @@ const ListarCaixas = () => {
 
             setLoading(true);
 
-            // const response = await axios.get(`${Apis.urlCaixa}/filtro?obs_identificador=${pesquisar}`, requestOptions);
-            const response = await axios.get(`http://localhost:5000/caixa/filtro`, { ...requestOptions, params: params });
+            const response = await axios.get(`${Apis.urlCaixa}/filtro`, { ...requestOptions, params: params });
 
             setCaixas(response.data.registros);
         } catch (error) {
