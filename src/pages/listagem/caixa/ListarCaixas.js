@@ -79,8 +79,8 @@ const ListarCaixas = () => {
                                     <span className={styles.criado_em}>Criado em: {String(item?.criado_em).substring(0, 10).split('-').reverse().join('/')}</span>
                                     <span className={styles.observacao}>Peso atual: {item?.peso_atual ? parseFloat(item?.peso_atual).toFixed(2) : 'Não medido'}</span>
                                     <span className={styles.observacao}
-                                        style={{ color: parseFloat(item?.peso_atual) >= parseFloat(item?.limite_peso) ? 'green' : '#000' }}
-                                    >Limite de Peso: {item?.limite_peso ? parseFloat(item?.limite_peso).toFixed(2) : 0.00} {parseFloat(item?.peso_atual) >= parseFloat(item?.limite_peso).toFixed(2) && "| PRONTO PARA COLETAR"}</span>
+                                        style={{ color: parseFloat(item?.peso_atual) >= parseFloat(item?.limite_peso) ? 'green' : '#000', fontWeight: '700' }}
+                                    >LIMITE DE PESO: {item?.limite_peso ? parseFloat(item?.limite_peso).toFixed(2) : 0.00} {parseFloat(item?.peso_atual) >= parseFloat(item?.limite_peso).toFixed(2) && "| PRONTO PARA COLETAR"}</span>
                                     <div className={styles.btns_card}>
                                         <button className={styles.alterar} onClick={() => navigation(`/caixa/alterar/${item?.id}`)}>alterar</button>
                                         <button onClick={() => handleRemoverCaixaConfirme(item?.id)}>remover</button>

@@ -17,9 +17,9 @@
         flex-direction: column;
         padding: 40px;
         row-gap: 20px;
+        background: linear-gradient(90deg, rgba(255, 176, 9, .5) 0%, rgba(255, 176, 9, .5) 35%), url('../../../assets/fundo2.png');
         background-size: cover;
         background-repeat: no-repeat;
-        background: linear-gradient(90deg, rgba(255, 176, 9, .8) 0%, rgba(255, 176, 9, .8) 35%), url('../../../assets/fundo_colmeia.avif');
 
         h1 {}
 

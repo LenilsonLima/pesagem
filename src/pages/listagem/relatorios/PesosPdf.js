@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Apis } from '../../../Apis';
 import { useParams } from 'react-router-dom';
+import Loading from '../../../components/Loading';
 
 // Estilos otimizados para PDF
 const styles = StyleSheet.create({
@@ -111,14 +112,7 @@ export default function RelatorioPesagemPDF() {
 
     if (loading) {
         return (
-            <div style={{
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-                height: '100vh'
-            }}>
-                <p>Carregando dados...</p>
-            </div>
+            <Loading/>
         );
     }
 
