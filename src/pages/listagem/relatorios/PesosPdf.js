@@ -160,7 +160,6 @@ export default function RelatorioPesagemPDF() {
 
                             {/* Dados da tabela */}
                             {dados.map((item, index) => (
-                                index < 30 &&
                                 <View key={item.id} style={[styles.tableRow, { backgroundColor: index % 2 != 0 ? '#f2f2f2' : 'transparent' }]}>
                                     <Text style={styles.tableCell}>{String(index + 1).padStart(2, 0)}</Text>
                                     <Text style={styles.tableCell}>{String(item.criado_em).substring(0, 10).split('-').reverse().join('/')}</Text>
