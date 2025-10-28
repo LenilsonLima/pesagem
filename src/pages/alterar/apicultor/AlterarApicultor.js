@@ -80,7 +80,7 @@ const AlterarApicultor = () => {
                 }
             }
 
-            const response = await axios.put(`${Apis.urlApicultor}/block`, requestOptions);
+            const response = await axios.put(`${Apis.urlApicultor}/block`, {}, requestOptions);
             AlertSucess(response.data.retorno.mensagem);
             localStorage.clear();
             navigation('/login');
