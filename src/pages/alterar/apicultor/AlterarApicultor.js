@@ -65,7 +65,7 @@ const AlterarApicultor = () => {
 
     const handleRemoverApicultorConfirm = async () => {
         AlertConfirm(
-            "Ao clicar em confirmar, você concorda em bloquear o apicultor e todos os dados vinculados a ele em nossa base de dados.",
+            "Ao confirmar, você concorda em desativar este usuário e bloquear todas as suas permissões de acesso na plataforma.",
             handleRemoverApicultor
         );
     };
