@@ -64,7 +64,7 @@ const AlterarApicultor = () => {
     }
 
     const handleRemoverApicultorConfirm = async () => {
-        AlertConfirm("Ao clicar em confirmar, você concorda em remover o apicultor e todos os dados vinculados a ele da nossa base de dados, essa ação não poderá ser revertida.", handleRemoverApicultor)
+        AlertConfirm("Ao clicar em confirmar, você concorda em bloquear o apicultor e todos os dados vinculados a ele da nossa base de dados.", handleRemoverApicultor)
     }
 
     const handleRemoverApicultor = async () => {
@@ -76,7 +76,7 @@ const AlterarApicultor = () => {
                 }
             }
 
-            const response = await axios.delete(Apis.urlApicultor, requestOptions);
+            const response = await axios.delete(`${Apis.urlApicultor}/block`, requestOptions);
             AlertSucess(response.data.retorno.mensagem);
             localStorage.clear();
             navigation('/login');
@@ -102,7 +102,7 @@ const AlterarApicultor = () => {
                 <button>Atualizar</button>
                 <div className={styles.footer}>
                     <a onClick={() => navigation(-1)}>Retornar à página anterior</a>
-                    <a style={{ textAlign: 'right' }} onClick={handleRemoverApicultorConfirm}>Apagar minha conta</a>
+                    <a style={{ textAlign: 'right' }} onClick={handleRemoverApicultorConfirm}>Desativar minha conta</a>
                 </div>
             </form>
         </div>
