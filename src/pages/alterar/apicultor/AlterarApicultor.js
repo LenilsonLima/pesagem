@@ -64,8 +64,12 @@ const AlterarApicultor = () => {
     }
 
     const handleRemoverApicultorConfirm = async () => {
-        AlertConfirm("Ao clicar em confirmar, você concorda em bloquear o apicultor e todos os dados vinculados a ele da nossa base de dados.", handleRemoverApicultor)
-    }
+        AlertConfirm(
+            "Ao clicar em confirmar, você concorda em bloquear o apicultor e todos os dados vinculados a ele em nossa base de dados.",
+            handleRemoverApicultor
+        );
+    };
+
 
     const handleRemoverApicultor = async () => {
         try {
@@ -76,7 +80,7 @@ const AlterarApicultor = () => {
                 }
             }
 
-            const response = await axios.delete(`${Apis.urlApicultor}/block`, requestOptions);
+            const response = await axios.put(`${Apis.urlApicultor}/block`, requestOptions);
             AlertSucess(response.data.retorno.mensagem);
             localStorage.clear();
             navigation('/login');
