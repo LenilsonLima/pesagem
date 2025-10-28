@@ -85,7 +85,7 @@ const AlterarApicultor = () => {
             localStorage.clear();
             navigation('/login');
         } catch (error) {
-            AlertSucess(error.response.data.retorno.mensagem);
+            AlertErro(error.response.data.retorno.mensagem);
         }
     }
     if (loading) {
