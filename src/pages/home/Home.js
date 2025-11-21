@@ -1,6 +1,6 @@
 import HeaderComponent from '../../components/HeaderComponent';
 import styles from './Home.module.scss';
-import { MdHive, MdChevronRight, MdMenu, MdModeEdit, MdOutlineClose } from "react-icons/md";
+import { MdHive, MdChevronRight, MdMenu, MdModeEdit, MdOutlineClose, MdDelete } from "react-icons/md";
 import colmeia from "../../assets/colmeia.png";
 import { useEffect, useState } from 'react';
 import axios from 'axios';
@@ -70,6 +70,35 @@ const Home = () => {
         setPesquisar('')
         setPesquisarVisible(!pesquisarVisible)
     }
+
+    const handleConfirmarExcluirCaixa = () => {
+        const confirm = window.confirm(`Tem certeza que deseja excluir a caixa "${caixaClicada?.observacao}"? Essa ação também removerá todos os pesos vinculados e não poderá ser desfeita.`)
+        if (confirm) {
+            handleDeletarCaixa();
+        }
+    }
+    const handleDeletarCaixa = async () => {
+        try {
+            setLoading(true);
+
+            const requestOptions = {
+                headers: {
+                    'Content-Type': 'application/json', 'Authorization': `Bearer ${localStorage.getItem('@pesa_box_token')}`
+                },
+                params: { caixa_id: caixaClicada?.id }
+            };
+
+            const response = await axios.delete(Apis.urlCaixa, requestOptions);
+
+            alert(response.data?.retorno?.mensagem || "Caixa excluída com sucesso!");
+            handleCaixas();
+        } catch (error) {
+            console.log("Erro ao excluir caixa:", error);
+            const msg = error.response?.data?.retorno?.mensagem || "Não foi possível excluir a caixa. Tente novamente.";
+            alert(msg);
+            setLoading(false);
+        }
+    };
     if (loading) {
         return (
             <LoadingComponent />
@@ -229,6 +258,16 @@ const Home = () => {
                             <span>Gráfico de Pesos</span>
                             <button className={styles.btn_opcao} onClick={() => setOpenCloseDados(false)}>
                                 <IoBarChartOutline size={20} />
+                            </button>
+                        </div>
+
+                        <div
+                            className={styles.area_btn_text}
+                            onClick={handleConfirmarExcluirCaixa}
+                        >
+                            <span>Excluir Caixa</span>
+                            <button className={styles.btn_opcao} onClick={() => setOpenCloseDados(false)}>
+                                <MdDelete />
                             </button>
                         </div>
 
