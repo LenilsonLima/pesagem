@@ -123,7 +123,7 @@ const Home = () => {
                                 <MdHive />
                             </div>
                             <div className={styles.cardDescription}>
-                                <p>Veja abaixo as caixas sincronizadas com o servidor. Clique em uma caixa para reconfigurar, trocar componentes ou editar a rede. Para adicionar uma nova caixa, toque no botão abaixo.</p>
+                                <p>Veja abaixo as caixas sincronizadas com o servidor. Clique em uma caixa para visulizar as ações disponiveis.</p>
                             </div>
                         </div>
 

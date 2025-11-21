@@ -5,10 +5,13 @@
     background-color: #f2f2f2;
     height: 100vh;
     overflow: hidden;
+    width: 100%;
 
     .homeScroll {
         overflow: auto;
         position: relative;
+        width: 100%;
+        max-width: 800px;
 
         .homeContent {
             padding: 10px;
@@ -16,7 +19,6 @@
             flex-direction: column;
             gap: 10px;
             width: 100%;
-            max-width: 800px;
 
             .card {
                 background-color: #fff;

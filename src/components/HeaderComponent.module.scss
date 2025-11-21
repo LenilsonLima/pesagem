@@ -1,18 +1,22 @@
 .areaHeader {
+    padding: 10px;
+    padding-bottom: 0px;
     width: 100%;
-    background-color: #f2f2f2;
-    border-bottom: solid 1px #dbdbdbff;
-    display: flex;
-    justify-content: center;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: transparent;
 
     .container_header {
-        padding: 10px;
+        padding: 20px;
         height: 95px;
         display: flex;
         justify-content: space-between;
         align-items: center;
+        border: solid 1px #dbdbdbff;
         width: 100%;
-        max-width: 800px;
+        border-radius: 10px;
+        background-color: #fff;
 
         .area_left {
             display: flex;
@@ -34,6 +38,7 @@
             .area_left_textos {
                 display: flex;
                 flex-direction: column;
+                gap: 5px;
 
                 span {
                     font-size: 13px;
@@ -43,6 +48,10 @@
                         font-weight: 600;
                         font-size: 20px;
                         color: #442a1a;
+                    }
+
+                    &:nth-child(2) {
+                        text-transform: uppercase;
                     }
                 }
             }
