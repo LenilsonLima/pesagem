@@ -10,8 +10,7 @@
         overflow: auto;
         position: relative;
         width: 100%;
-        display: flex;
-        justify-content: center;
+        max-width: 1000px;
 
         .content {
             padding: 10px;
