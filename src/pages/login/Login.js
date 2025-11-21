@@ -71,6 +71,7 @@ const Login = () => {
                             <input
                                 type="email"
                                 placeholder="E-mail"
+                                name="email"
                                 className={styles.input}
                                 value={usuario}
                                 onChange={(e) => setUsuario(e.target.value)}
@@ -118,7 +119,7 @@ const Login = () => {
                             onClick={() => navigation('/login/solicitar/troca/senha')}
                         >
                             <span>Esqueci Minha Senha</span>
-                            <button className={styles.optionIcon} onClick={() => setOpenCloseOpcoes(false)}>
+                            <button className={styles.optionIcon}>
                                 <MdOutlineLock />
                             </button>
                         </div>
@@ -128,14 +129,14 @@ const Login = () => {
                             onClick={() => navigation('/login/apicultor/cadastrar')}
                         >
                             <span>Criar Nova Conta</span>
-                            <button className={styles.optionIcon} onClick={() => setOpenCloseOpcoes(false)}>
+                            <button className={styles.optionIcon}>
                                 <MdAdd />
                             </button>
                         </div>
 
-                        <div className={styles.optionItem}>
+                        <div className={styles.optionItem} onClick={() => setOpenCloseOpcoes(false)}>
                             <span>Fechar</span>
-                            <button className={styles.optionIcon} onClick={() => setOpenCloseOpcoes(false)}>
+                            <button className={styles.optionIcon}>
                                 <IoMdClose />
                             </button>
                         </div>

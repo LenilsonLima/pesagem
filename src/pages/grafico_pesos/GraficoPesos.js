@@ -226,28 +226,31 @@ const GraficoPesos = () => {
                             <>
                                 <div className={styles.area_btn_text} onClick={() => navigation(`/pesos/analise-ia/${params?.caixa_id}/${dataIncial}/${dataFinal}/${params?.observacao}`)}>
                                     <span>Sugestões Com IA</span>
-                                    <button className={styles.btn_opcao} onClick={() => setOpenCloseDados(false)}>
+                                    <button className={styles.btn_opcao}>
                                         <RiRobot2Line />
                                     </button>
                                 </div>
 
-                                <div className={styles.area_btn_text}>
+                                <div
+                                    className={styles.area_btn_text}
+                                    onClick={() => navigation(`/pesos/pdf/${params?.caixa_id}/${dataIncial}/${dataFinal}`)}
+                                >
                                     <span>Gerar PDF</span>
-                                    <button className={styles.btn_opcao} onClick={() => navigation(`/pesos/pdf/${params?.caixa_id}/${dataIncial}/${dataFinal}`)}>
+                                    <button className={styles.btn_opcao}>
                                         <MdPictureAsPdf />
                                     </button>
                                 </div>
                             </>
                         }
 
-                        <div className={styles.area_btn_text}>
+                        <div
+                            className={styles.area_btn_text}
+                            onClick={() => {
+                                setOpenCloseDados(false);
+                            }}
+                        >
                             <span>Fechar</span>
-                            <button
-                                className={styles.btn_opcao}
-                                onClick={() => {
-                                    setOpenCloseDados(false);
-                                }}
-                            >
+                            <button className={styles.btn_opcao}>
                                 <IoMdClose />
                             </button>
                         </div>

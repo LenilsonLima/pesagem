@@ -72,6 +72,7 @@ const Home = () => {
     }
 
     const handleConfirmarExcluirCaixa = () => {
+        setOpenCloseDados(false);
         const confirm = window.confirm(`Tem certeza que deseja excluir a caixa "${caixaClicada?.observacao}"? Essa ação também removerá todos os pesos vinculados e não poderá ser desfeita.`)
         if (confirm) {
             handleDeletarCaixa();
@@ -182,14 +183,16 @@ const Home = () => {
                         </div>
                     }
                     <div className={styles.area_btn}>
-                        <div className={styles.area_btn_text}>
+                        <div
+                            className={styles.area_btn_text}
+                            onClick={() => {
+                                setFiltrar(!filtrar);
+                                setOpenCloseOpcoes(false);
+                            }}
+                        >
                             <span>Recarregar Dados</span>
                             <button
                                 className={styles.btn_opcao}
-                                onClick={() => {
-                                    setFiltrar(!filtrar);
-                                    setOpenCloseOpcoes(false);
-                                }}
                             >
                                 <AiOutlineReload />
                             </button>
@@ -200,7 +203,7 @@ const Home = () => {
                             onClick={() => navigation('/apicultor/alterar')}
                         >
                             <span>Meus Dados</span>
-                            <button className={styles.btn_opcao} onClick={() => setOpenCloseOpcoes(false)}>
+                            <button className={styles.btn_opcao}>
                                 <FiUser />
                             </button>
                         </div>
@@ -235,14 +238,14 @@ const Home = () => {
                             onClick={handleLogout}
                         >
                             <span>Fazer Logout</span>
-                            <button className={styles.btn_opcao} onClick={() => setOpenCloseOpcoes(false)}>
+                            <button className={styles.btn_opcao}>
                                 <RiLogoutCircleRLine />
                             </button>
                         </div>
 
-                        <div className={styles.area_btn_text}>
+                        <div className={styles.area_btn_text} onClick={() => setOpenCloseOpcoes(false)}>
                             <span>Fechar</span>
-                            <button className={styles.btn_opcao} onClick={() => setOpenCloseOpcoes(false)}>
+                            <button className={styles.btn_opcao}>
                                 <IoMdClose />
                             </button>
                         </div>
@@ -256,7 +259,7 @@ const Home = () => {
                     <div className={styles.area_btn}>
                         <div className={styles.area_btn_text} onClick={() => navigation(`/pesos/grafico/${caixaClicada?.id}/${caixaClicada?.observacao}`)}>
                             <span>Gráfico de Pesos</span>
-                            <button className={styles.btn_opcao} onClick={() => setOpenCloseDados(false)}>
+                            <button className={styles.btn_opcao}>
                                 <IoBarChartOutline size={20} />
                             </button>
                         </div>
@@ -266,7 +269,7 @@ const Home = () => {
                             onClick={handleConfirmarExcluirCaixa}
                         >
                             <span>Excluir Caixa</span>
-                            <button className={styles.btn_opcao} onClick={() => setOpenCloseDados(false)}>
+                            <button className={styles.btn_opcao}>
                                 <MdDelete />
                             </button>
                         </div>
@@ -276,14 +279,14 @@ const Home = () => {
                             onClick={handleAlterarCaixa}
                         >
                             <span>Alterar Caixa</span>
-                            <button className={styles.btn_opcao} onClick={() => setOpenCloseDados(false)}>
+                            <button className={styles.btn_opcao}>
                                 <MdModeEdit size={20} />
                             </button>
                         </div>
 
-                        <div className={styles.area_btn_text}>
+                        <div className={styles.area_btn_text} onClick={() => setOpenCloseDados(false)}>
                             <span>Fechar</span>
-                            <button className={styles.btn_opcao} onClick={() => setOpenCloseDados(false)}>
+                            <button className={styles.btn_opcao}>
                                 <IoMdClose />
                             </button>
                         </div>
