@@ -1,0 +1,61 @@
+.areaHeader {
+    width: 100%;
+    background-color: #f2f2f2;
+    border-bottom: solid 1px #dbdbdbff;
+    display: flex;
+    justify-content: center;
+
+    .container_header {
+        padding: 10px;
+        height: 95px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        max-width: 1000px;
+
+        .area_left {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            .area_logo {
+                height: 50px;
+                width: 50px;
+                border-radius: 10px;
+                background-color: #17a2b8;
+
+                img {
+                    height: 100%;
+                    width: 100%;
+                }
+            }
+
+            .area_left_textos {
+                display: flex;
+                flex-direction: column;
+
+                span {
+                    font-size: 13px;
+                    color: #a0856c;
+
+                    &:nth-child(1) {
+                        font-weight: 600;
+                        font-size: 20px;
+                        color: #442a1a;
+                    }
+                }
+            }
+        }
+
+        button {
+            background-color: transparent;
+            display: flex;
+            border: none;
+
+            svg {
+                font-size: 30px;
+            }
+        }
+    }
+}

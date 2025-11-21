@@ -1,0 +1,164 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f2f2f2;
+    height: 100vh;
+    overflow: hidden;
+
+    .scrollArea {
+        overflow: auto;
+        position: relative;
+
+        .content {
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: 100%;
+            max-width: 800px;
+
+            .formCard {
+                background-color: #fff;
+                border: 1px solid #dbdbdbff;
+                border-radius: 10px;
+                overflow: hidden;
+
+                .formHeader {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding: 20px;
+                    gap: 10px;
+
+                    .formTitle {
+                        color: #442a1a;
+                        font-size: 15px;
+                        text-transform: uppercase;
+                        font-weight: 600;
+                    }
+
+                    svg {
+                        color: #ffa500;
+                        font-size: 25px;
+                    }
+                }
+
+                .formDescription {
+                    padding: 20px;
+                    border-top: 1px solid #dbdbdbff;
+
+                    p {
+                        color: #a0856c;
+                        font-size: 13px;
+                    }
+                }
+
+                // === INPUT ===
+                .inputGroup {
+                    display: flex;
+                    align-items: center;
+                    border-top: solid 1px #dbdbdbff;
+
+                    .input {
+                        flex: 1;
+                        height: 60px;
+                        padding: 0px 10px;
+                        color: #a0856c;
+                        font-size: 13px;
+                        outline: none;
+                        border: none;
+                    }
+
+                    .inputIcon {
+                        padding-right: 10px;
+                        color: #442a1a;
+                        font-size: 35px;
+                        cursor: pointer;
+                    }
+                }
+
+                .formFooter {
+                    display: flex;
+                    border-top: solid 1px #dbdbdbff;
+                    height: 60px;
+                    padding: 0px 5px;
+                    align-items: center;
+                    justify-content: center;
+
+                    .buttonPrimary {
+                        display: flex;
+                        padding: 0px 10px;
+                        background-color: #ffa500;
+                        height: 50px;
+                        width: 100%;
+                        border-radius: 5px;
+                        align-items: center;
+                        justify-content: space-between;
+
+                        .buttonText {
+                            color: #fff;
+                            font-size: 13px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.optionsModal {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    top: 0px;
+    right: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: rgba(0, 0, 0, .6);
+
+    .optionsList {
+        width: 100%;
+        max-width: 800px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 10px;
+        padding: 10px;
+
+        .optionItem {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            background-color: transparent;
+
+            span {
+                background-color: #f2f2f2;
+                border-radius: 15px;
+                padding: 5px 20px;
+                font-size: 13px;
+                color: #442a1a;
+            }
+
+            .optionIcon {
+                border: none;
+                background-color: #ffa500;
+                height: 50px;
+                width: 50px;
+                border-radius: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                svg {
+                    font-size: 25px;
+                    color: #fff;
+                }
+            }
+        }
+    }
+}

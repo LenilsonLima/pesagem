@@ -1,0 +1,246 @@
+.home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f2f2f2;
+    height: 100vh;
+    overflow: hidden;
+
+    .homeScroll {
+        overflow: auto;
+        position: relative;
+
+        .homeContent {
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: 100%;
+            max-width: 800px;
+
+            .card {
+                background-color: #fff;
+                border: 1px solid #dbdbdbff;
+                border-radius: 10px;
+                overflow: hidden;
+
+                .cardHeader {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding: 20px;
+                    gap: 10px;
+
+                    .cardTitle {
+                        color: #442a1a;
+                        font-size: 15px;
+                        text-transform: uppercase;
+                        font-weight: 600;
+                    }
+
+                    svg {
+                        color: orange;
+                        font-size: 25px;
+                    }
+                }
+
+                .cardDescription {
+                    padding: 20px;
+                    border-top: 1px solid #dbdbdbff;
+
+                    p {
+                        color: #a0856c;
+                        font-size: 13px;
+                    }
+                }
+
+                /* CAIXAS */
+                .caixaGroup {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: space-between;
+                    width: 100%;
+                    padding: 30px 20px;
+                    border-top: 1px solid #dbdbdbff;
+                    background: none;
+
+                    &:hover {
+                        background-color: transparent !important;
+                        opacity: .5;
+                    }
+
+                    .caixaContent {
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        gap: 10px;
+                        max-width: 90%;
+
+                        .caixaIconWrapper {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            width: 60px;
+                            height: 60px;
+                            background-color: #f2f2f2;
+                            border-radius: 10px;
+                            overflow: hidden;
+
+                            .caixaImage {
+                                width: 40px;
+                                height: 40px;
+                            }
+                        }
+
+
+                        .caixaBody {
+                            display: flex;
+                            flex-direction: column;
+                            align-items: flex-start;
+                            gap: 5px;
+                            flex-shrink: 1;
+                            text-align: left;
+
+                            .caixaTitle {
+                                font-size: 20px;
+                                font-weight: 600;
+                                color: #442a1a;
+                            }
+
+                            .caixaStatus {
+                                font-size: 13px;
+                            }
+
+                            .caixaIdentificacao {
+                                font-size: 13px;
+                                color: #a0856c;
+                            }
+                        }
+
+                    }
+
+                    .caixaIcon {
+                        font-size: 25px;
+                        color: #442a1a;
+                    }
+                }
+            }
+        }
+
+
+    }
+
+    .sem_registros {
+        height: 100%;
+        width: 100%;
+        max-width: 800px;
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        p {
+            max-width: 500px;
+            text-align: center;
+            font-size: 18px;
+            color: #cb2027;
+        }
+    }
+}
+
+.opcoesContainer {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    top: 0px;
+    right: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: rgba(0, 0, 0, .6);
+
+    .area_form {
+        width: 100%;
+        height: 100%;
+        max-width: 800px;
+        padding: 10px;
+        display: flex;
+
+        label {
+            background-color: #fff;
+            border-radius: 2px;
+            width: 100%;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            padding-right: 10px;
+            overflow: hidden;
+
+            input {
+                padding: 10px;
+                flex-grow: 1;
+                border: none;
+                outline: none;
+                color: #442a1a;
+                height: 100%;
+            }
+
+            svg {
+                font-size: 20px;
+                color: #442a1a;
+                cursor: pointer;
+            }
+        }
+    }
+
+    .area_btn {
+        width: 100%;
+        max-width: 800px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 10px;
+        padding: 10px;
+
+        .area_btn_text {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            background-color: transparent;
+
+            &:hover {
+                opacity: 1;
+            }
+
+            span {
+                background-color: #f2f2f2;
+                border-radius: 15px;
+                padding: 5px 20px;
+                font-size: 13px;
+                color: #442a1a;
+            }
+
+
+
+            .btn_opcao {
+                border: none;
+                background-color: #ffa500;
+                height: 50px;
+                width: 50px;
+                border-radius: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                svg {
+                    font-size: 25px;
+                    color: #fff;
+                }
+            }
+        }
+    }
+}

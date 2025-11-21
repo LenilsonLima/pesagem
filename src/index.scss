@@ -1,0 +1,45 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+
+}
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+}
+
+button {
+  transition: .3s ease-in-out;
+  cursor: pointer;
+  border: none;
+
+  &:hover {
+    background-color: #be7f09 !important;
+  }
+}
+
+/* largura da barra */
+::-webkit-scrollbar {
+  width: 0px;
+  /* largura vertical */
+  height: 0px;
+  /* altura horizontal */
+}
+
+/* trilho (fundo) */
+::-webkit-scrollbar-track {
+  background: #e0e0e0;
+}
+
+/* barra (scroll) */
+::-webkit-scrollbar-thumb {
+  background: #ffa500;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #db920b;
+}

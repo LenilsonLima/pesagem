@@ -1,0 +1,210 @@
+.home {
+    display: flex;
+    flex-direction: column;
+    background-color: #f2f2f2;
+    height: 100vh;
+    overflow: hidden;
+
+    .homeScroll {
+        overflow: auto;
+        position: relative;
+
+        .homeContent {
+            padding: 10px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: 100%;
+            max-width: 800px;
+            margin: auto;
+
+            .card {
+                background-color: #fff;
+                border: 1px solid #dbdbdbff;
+                border-radius: 10px;
+                overflow: hidden;
+
+                .cardHeader {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding: 20px;
+                    gap: 10px;
+
+                    .cardTitle {
+                        color: #442a1a;
+                        font-size: 15px;
+                        text-transform: uppercase;
+                        font-weight: 600;
+                    }
+
+                    svg {
+                        color: orange;
+                        font-size: 25px;
+                    }
+                }
+
+                .cardDescription {
+                    padding: 20px;
+                    border-top: 1px solid #dbdbdbff;
+
+                    p {
+                        color: #a0856c;
+                        font-size: 13px;
+                    }
+                }
+
+                // === RESUMO ===
+                .headerBox {
+                    display: flex;
+                    justify-content: space-around;
+                    border-radius: 8px;
+                    padding: 5px;
+                    gap: 5px;
+
+                    .headerItem {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        background-color: #f8f8f8;
+                        padding: 10px;
+                        flex: 1;
+                        border-radius: 10px;
+
+                        .headerLabel {
+                            font-size: 13px;
+                            font-style: italic;
+                            color: #442a1a
+                        }
+
+                        .headerValue {
+                            font-weight: 600;
+                            font-size: 13px;
+                            color: #333;
+                        }
+                    }
+                }
+
+                .container_filtro {
+                    height: 100%;
+                    width: 100%;
+                    max-width: 800px;
+                    display: flex;
+                    gap: 5px;
+                    padding: 10px;
+                    align-items: flex-end;
+                    flex-wrap: wrap;
+
+                    input {
+                        padding: 10px;
+                        height: 40px;
+                        background-color: #f2f2f2;
+                        border-radius: 2px;
+                        border: none;
+                        color: #333;
+                        outline: none;
+                        flex-grow: 1;
+                        min-width: 150px;
+                    }
+
+                    .buttonPrimary {
+                        display: flex;
+                        flex-grow: 1;
+                        padding: 0px 10px;
+                        background-color: #ffa500;
+                        height: 40px;
+                        border-radius: 5px;
+                        align-items: center;
+                        justify-content: space-between;
+                        min-width: 150px;
+
+                        &:hover {
+                            background-color: #be7f09;
+                            // opacity: 1;
+                        }
+
+                        .buttonText {
+                            color: #fff;
+                            font-size: 13px;
+                        }
+                    }
+                }
+
+            }
+
+            .sem_registros {
+                height: 100%;
+                width: 100%;
+                max-width: 800px;
+                padding: 50px 10px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                p {
+                    max-width: 500px;
+                    text-align: center;
+                    font-size: 18px;
+                    color: #cb2027;
+                }
+            }
+        }
+    }
+
+    .opcoesContainer {
+        position: absolute;
+        height: 100vh;
+        width: 100vw;
+        top: 0px;
+        right: 0px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        background-color: rgba(0, 0, 0, .6);
+
+        .area_btn {
+            width: 100%;
+            max-width: 800px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 10px;
+            padding: 10px;
+
+            .area_btn_text {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                cursor: pointer;
+                background-color: transparent;
+
+                span {
+                    background-color: #f2f2f2;
+                    border-radius: 15px;
+                    padding: 5px 20px;
+                    font-size: 13px;
+                    color: #442a1a;
+                }
+
+                .btn_opcao {
+                    border: none;
+                    background-color: #ffa500;
+                    height: 50px;
+                    width: 50px;
+                    border-radius: 50%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    svg {
+                        font-size: 25px;
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    }
+}
